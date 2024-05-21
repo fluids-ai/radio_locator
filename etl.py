@@ -25,3 +25,16 @@ def coordinate_results(lat, lon):
     -------
     '''
     return None
+
+def distance(lat, lon, stations):
+    '''
+    Parameters
+    ----------
+    lat float
+        The decimal degrees with WGS 84 projection representing the latitude
+    lon float
+        The decimal degrees with WGS 84 projection representing the longitude
+    stations list of tuples (lat, lon)
+        A list of the stations to calculate distance from the input lat, lon
+    '''
+    return [gcc.distance_between_points((lon, lat), (station[1], station[0])) for station in stations]
