@@ -8,6 +8,7 @@ config = {
 import requests
 import pandas as pd
 from bs4 import BeautifulSoup
+import great_circle_calculator.great_circle_calculator as gcc
 
 def coordinate_results(lat, lon):
     '''
