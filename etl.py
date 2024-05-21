@@ -1,5 +1,5 @@
 config = {
-    sources : {
+    'sources' : {
         'noaa' : 'https://www.weather.gov/nwr/station_search',
         'amfm' : 'https://radio-locator.com/',
         'sw' : 'https://short-wave.info/index.php'
@@ -39,9 +39,6 @@ def distance(lat, lon, stations):
         A list of the stations to calculate distance from the input lat, lon
     '''
     return [gcc.distance_between_points((lon, lat), (station[1], station[0])) for station in stations]
-
-import requests
-import re
 
 def parse_noaa_stations():
     response = requests.get(config['sources']['noaa'])
